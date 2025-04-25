@@ -34,8 +34,8 @@ class SyntheticUtil:
             p1, p2 = model_points[idx1], model_points[idx2]
             q1 = camera.project_3d(p1[0], p1[1], 0.0, 1.0)
             q2 = camera.project_3d(p2[0], p2[1], 0.0, 1.0)
-            q1 = np.rint(q1).astype(np.int)
-            q2 = np.rint(q2).astype(np.int)
+            q1 = np.rint(q1).astype(np.int64)
+            q2 = np.rint(q2).astype(np.int64)
             cv.line(im, tuple(q1), tuple(q2), color, thickness=line_width)
         return im
 
